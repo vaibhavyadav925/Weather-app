@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gradient Weather App</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">WeatherFlow</div>
+            <div class="search-bar">
+                <input type="text" id="location-input" placeholder="Enter city" value="London" aria-label="Enter city name">
+                <button id="search-button" aria-label="Search">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </button>
+            </div>
+        </header>
+
+        <main class="weather-main-card">
+            <div class="loading-state" id="loading-state">Loading weather...</div>
+            <div class="weather-content" id="weather-content" style="display: none;">
+                <div class="current-weather-summary">
+                    <h2 id="location-name" class="location-name">--</h2>
+                    <p id="weather-condition" class="weather-condition">--</p>
+                    <div class="temp-and-icon">
+                        <span class="temperature" id="temperature">--</span>
+                        <img id="weather-icon" src="/placeholder.svg" alt="Weather Icon" class="weather-icon">
+                    </div>
+                    <div class="feels-like">Feels like: <span id="feels-like-temp">--</span>°C</div>
+                </div>
+            </div>
+        </main>
+
+        <section class="weather-details-grid">
+            <div class="detail-card">
+                <div class="detail-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-wind"><path d="M17.7 7.7a2.5 2.5 0 1 1 1.8 4.3H2"/><path d="M9.6 4.6A2.5 2.5 0 1 1 7.8 9H2"/><path d="M12.5 12.5A2.5 2.5 0 1 1 10.7 17H2"/></svg>
+                </div>
+                <span class="detail-label">Wind Speed</span>
+                <span class="detail-value" id="wind-speed">-- km/h</span>
+            </div>
+            <div class="detail-card">
+                <div class="detail-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-droplet"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.32 0L12 2.69z"/></svg>
+                </div>
+                <span class="detail-label">Humidity</span>
+                <span class="detail-value" id="humidity">-- %</span>
+            </div>
+            <div class="detail-card">
+                <div class="detail-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-gauge"><path d="M12 14a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z"/><path d="M12 2v2"/><path d="M12 22v-2"/><path d="m20 20-1.4-1.4"/><path d="m4 4 1.4 1.4"/><path d="m22 12h-2"/><path d="m2 12h2"/><path d="m20 4-1.4 1.4"/><path d="m4 20 1.4-1.4"/></svg>
+                </div>
+                <span class="detail-label">Pressure</span>
+                <span class="detail-value" id="pressure">-- hPa</span>
+            </div>
+            <div class="detail-card">
+                <div class="detail-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-eye"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+                </div>
+                <span class="detail-label">Visibility</span>
+                <span class="detail-value" id="visibility">-- km</span>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
